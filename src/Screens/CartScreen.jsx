@@ -30,7 +30,7 @@ const CartScreen = () => {
   const handleCheckout = () => {
     dispatch({ type: "CLEAR_CART" });
     setShowToast(true);
-    setToastMessage({ title: "Checkout", body: "Thanks for purchasing" });
+    setToastMessage({ title: "Purchase Confirmed", body: "Your order will be delivered shortly" });
     setVariant("success");
   };
 
