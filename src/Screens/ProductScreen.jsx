@@ -30,7 +30,11 @@ const ProductScreen = () => {
   }, []);
 
   const handleCategory = (value) => {
-    if (value === "all") return setData(products);
+    if (value === "all") {
+      setCategory(value);
+      setData(products);
+      return;
+    }
     let filteredData = products.filter((product) => product.category === value);
     setData(filteredData);
     setCategory(value);
