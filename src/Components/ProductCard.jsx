@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useCart } from "../Contexts/CartContext";
 import { Link } from "react-router-dom";
-import { RiShoppingCart2Fill } from "react-icons/ri";
 
 const ProductCard = ({ product }) => {
   let { title, image, hoverImage, category, price } = product;
@@ -56,14 +55,20 @@ const ProductCard = ({ product }) => {
           <Card.Text>Price: ${price}</Card.Text>
           {isAddedToCart ? (
             <div
-              style={{ display: "flex", gap: "15px", justifyContent: "end" }}
+              style={{
+                display: "flex",
+                gap: "15px",
+                justifyContent: "space-between",
+              }}
             >
               <OverlayTrigger
                 placement="bottom"
-                overlay={<Tooltip id="button-tooltip">Go to cart</Tooltip>}
+                overlay={<Tooltip id="button-tooltip">Proceed to checkout</Tooltip>}
               >
                 <Link to="/cart">
-                  <RiShoppingCart2Fill size={23} color="black" />
+                  <Button variant="info">
+                    Proceed to checkout
+                  </Button>
                 </Link>
               </OverlayTrigger>
               <OverlayTrigger
@@ -75,7 +80,9 @@ const ProductCard = ({ product }) => {
                   </Tooltip>
                 }
               >
-                <Button onClick={removeFromCart}>Remove</Button>
+                <Button onClick={removeFromCart} variant="danger">
+                  Remove
+                </Button>
               </OverlayTrigger>
             </div>
           ) : (

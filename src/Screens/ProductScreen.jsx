@@ -15,7 +15,7 @@ const ProductScreen = () => {
 
   const makeCategoryOptions = () => {
     let categoryOptions = [];
-    categoryOptions.push("all");
+    categoryOptions.push("All");
     products.forEach((item) => {
       if (!categoryOptions.includes(item.category)) {
         categoryOptions.push(item.category);
@@ -30,7 +30,7 @@ const ProductScreen = () => {
   }, []);
 
   const handleCategory = (value) => {
-    if (value === "all") {
+    if (value === "All") {
       setCategory(value);
       setData(products);
       return;
