@@ -16,7 +16,7 @@ const CartItem = ({ title, image, category, price, onRemove }) => {
           <div className="d-flex justify-content-between align-items-center">
             <div className="mx-2 mr-3">
               <h6 className="mb-0">
-                {title.length > 20 ? title.slice(0, 17) + " " + "..." : title}
+                {title.length > 20 ? title.slice(0, 17) + " ..." : title}
               </h6>
               <div className="d-flex flex-column">
                 <small className="text-muted">{category}</small>
