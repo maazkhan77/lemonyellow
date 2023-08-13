@@ -15,13 +15,18 @@ const CartItem = ({ title, image, category, price, onRemove }) => {
         <div className="flex-grow-1">
           <div className="d-flex justify-content-between align-items-center">
             <div className="mx-2 mr-3">
-              <h6 className="mb-0">{title}</h6>
-              <small className="text-muted">{category}</small>
+              <h6 className="mb-0">
+                {title.length > 20 ? title.slice(0, 17) + " " + "..." : title}
+              </h6>
+              <div className="d-flex flex-column">
+                <small className="text-muted">{category}</small>
+                <small className="text-muted d-sm-none">${price}</small>
+              </div>
             </div>
-            <span>${price}</span>
+            <div className="d-none d-sm-block mx-5">${price}</div>
           </div>
         </div>
-        <Button variant="danger" className=" mx-5" onClick={onRemove}>
+        <Button variant="danger" onClick={onRemove}>
           Remove
         </Button>
       </div>

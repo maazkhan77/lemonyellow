@@ -22,7 +22,7 @@ function CollapsibleExample() {
             E-commerce Product Catalog
           </div>
         </Link>
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", marginRight: "15px" }}>
           <Link to="/cart">
             <RiShoppingCart2Fill size={23} color="black" />
             {cart.length > 0 && (
